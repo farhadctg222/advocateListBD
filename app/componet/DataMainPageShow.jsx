@@ -87,7 +87,7 @@ const DataMainPageShow = async () => {
 
   return (
     <div>
-      <h1>All Post</h1>
+    
 
       <div>
         {services.length === 0 && <p>No data available.</p> }
