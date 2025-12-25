@@ -16,6 +16,7 @@ const getData = async () => {
 };
 
 
+
 // export const  postData = async()=>{
 //    try {
 //     const result = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/post`,{
