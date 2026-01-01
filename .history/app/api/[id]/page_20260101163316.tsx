@@ -5,7 +5,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ id: string 
  
   return (
     <div>
-      <p>hi hello world {id}</p>
+      <p>hi {id}</p>
     </div>
   )
 }
