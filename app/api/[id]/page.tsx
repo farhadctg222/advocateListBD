@@ -8,6 +8,6 @@ export default function BlogPostPage({ params } {
  
   return (
     <div>
-      <p>hi hello world {data.strinfy.json}</p>
+      <p>hi Mohammad Farhad Uddin  hello world {data.strinfy.json}</p>
     </div>
  
