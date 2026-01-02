@@ -1,11 +1,13 @@
-import { use } from 'react'
+
+import connectDB from "../.../connectdb";
  
-export default function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
+export default function BlogPostPage({ params } {
+  const id  = params.id
+ const db = await connectDb()
+ const data= db.find(_id===id)
  
   return (
     <div>
-      <p>hi hello world {id}</p>
+      <p>hi hello world {data.strinfy.json}</p>
     </div>
-  )
-}
+ 
