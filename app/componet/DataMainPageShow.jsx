@@ -21,9 +21,7 @@ const getData = async () => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API_URL}/api`,
-      {
-        next: { revalidate: 10 }
-      }
+      
     );
 
     if (!res.ok) {
