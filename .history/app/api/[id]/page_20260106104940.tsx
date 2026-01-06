@@ -114,7 +114,7 @@ const  {
         {/* About */}
         <div className="mt-6">
           <h2 className="text-xl font-semibold border-b pb-1">
-            About the {name}
+            About the Advocate
           </h2>
 
           <p className="mt-3 text-justify leading-7">
