@@ -32,6 +32,7 @@ const Page = async ({ params }) => {
         className="inline-block bg-cyan-600 text-white px-6 py-3 rounded-lg shadow hover:bg-cyan-700 transition"
       >
         হোম পেজে ফিরুন
+        <br />
       </a>
     </div>
     ); 
