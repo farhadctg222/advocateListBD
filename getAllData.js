@@ -14,7 +14,7 @@ export const getData = async () => {
     return []; // fallback
   }
 };
-console.log(getData)
+
 
 
 
