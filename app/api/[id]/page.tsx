@@ -31,7 +31,7 @@ const Page = async ({ params }) => {
         href="/"
         className="inline-block bg-cyan-600 text-white px-6 py-3 rounded-lg shadow hover:bg-cyan-700 transition"
       >
-        হোম পেজে ফিরুন
+        হোমপেজে ফিরুন
         <br />
       </a>
     </div>
