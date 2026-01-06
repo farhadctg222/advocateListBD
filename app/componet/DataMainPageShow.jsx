@@ -22,8 +22,7 @@ const getData = async () => {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API_URL}/api`,
       {
-        cache: "no-store",
-        next: { revalidate: 10 },
+        next: { revalidate: 10 }
       }
     );
 

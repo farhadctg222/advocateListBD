@@ -1,4 +1,4 @@
-
+export const dynamic = "force-dynamic";
 import { ObjectId } from "mongodb";
 import connectDB from "@/connectdb";
 
