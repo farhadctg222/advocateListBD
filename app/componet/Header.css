@@ -1,0 +1,34 @@
+.lawItp h1{
+   border: 1px solid rgb(199, 193, 193);
+   text-align: center;
+   padding: 5px;
+   font-family: roboto,sans-serif;
+   color: #ffffff;
+   text-decoration: solid;
+
+}
+.lawItp{
+    background-color:#2a7fba;
+}
+.search{
+   
+    border: 1px solid rgb(199, 193, 193);
+    text-align: center;
+    padding: 5px;
+  
+    font-family: roboto,sans-serif;
+    color: #ffffff;
+}
+
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    background-color:  rgb(9, 122, 150);
+    list-style: none;
+    padding: 5px;
+  
+}
+nav ul li{
+    color: white;
+}

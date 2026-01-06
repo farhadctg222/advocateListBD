@@ -1,0 +1,114 @@
+
+.active{
+    background-color: #ffe600;
+    
+}
+.listLawyer{
+    border: 1px solid rgb(228, 213, 213);
+}
+
+
+.lawItps{
+    border-bottom: 1px solid rgb(172, 160, 160);
+   text-align: center;
+   padding: 10px;
+   color: white
+
+;
+   
+   font-family:  roboto,sans-serif;
+   text-transform: uppercase;
+   font-weight: bolder;
+   
+   margin: 0;
+   background-color:#1F5F5B;
+  
+}
+.button button{
+   margin: 5px;
+   border-style: none;
+   background-color: #25638f;
+   border-radius: 4px;
+   padding: 10px;
+   color: white;
+   
+}
+.button{
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #F4F6F6
+}
+
+
+.Recently{
+    border: 1px solid rgb(199, 193, 193);
+    text-align: center;
+    padding: 5px;
+    background-color: red;
+    font-family: roboto,sans-serif;
+    color: white
+}
+.aboutBangladesh{
+    border: 1px solid black;
+    text-align: center;
+}
+.aboutBangladesh h2{
+    border-bottom: 1px solid black;
+}
+.aboutBangladesh p{
+    border-top: 1px solid black;
+}
+
+    
+.image{
+    margin-top: 10px;
+    padding: 2px;
+    width: 150px;
+    display: inline-block;
+    border: 2px solid #2a7fba;
+}
+.image img{
+    display: block;
+}
+img{
+    height: auto;
+    max-width: 100%;
+    width: 200px;
+   
+    overflow: auto;
+    overflow: clip;
+}
+.nameHeader h3, h4,h5,h6{
+    margin: 5px;
+    padding: 0;
+   
+}
+.nameHeader .desination{
+   font-weight: lighter;
+}
+.seeChamber{
+    background-Color:#2a7fba;
+    padding:10px;
+    border-Style:none;
+    color:white;
+    font-Size:16px;
+    border-radius: 10px;
+}
+.seeChamber:hover{
+    background-color: red;
+    text-decoration: dashed;
+}
+.ProfileCard{
+    font-family: robute,sans-serif;
+}
+.nameHeader{
+    margin-bottom: 3px;
+    font-size: 20px;
+    
+}
+   
