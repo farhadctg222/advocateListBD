@@ -4,8 +4,8 @@ import connectDB from "@/connectdb";
 
 
 
-const Page = async ({ params }) => {
-  const { id } =await params; // ❌ await লাগবে না
+const Page = async ({ params }: { params: { id: string } }) => {
+  const { id } =  params; // ❌ await লাগবে না
 
   const db = await connectDB();
   const collection = db.collection("lawyerBD");
@@ -65,7 +65,7 @@ const  {
       >
         {/* Header */}
         <div className="flex items-center gap-6 border-b-2 pb-4">
-          <div className="w-32 h-36 border">
+          <div className="w-32 h-42 border">
             <img
               src={image}
               alt={name}
