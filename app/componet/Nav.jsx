@@ -17,10 +17,7 @@ const Nav = () => {
             name:'Service',
             path:"/service"
         },
-        {
-            name:'Blog',
-            path:"/blog"
-        },
+        
         {
             name:'Stuff',
             path:"/stuff"
@@ -29,10 +26,7 @@ const Nav = () => {
             name:'Contact',
             path:"/contact"
         },
-        {
-            name:'Login',
-            path:"/login"
-        }
+        
     ]
     
   const pathname = usePathname();
@@ -43,7 +37,7 @@ const Nav = () => {
                     return(
                         <Link href={links.path}
                          key={index}
-                          className={`${links.path===pathname && "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-blue transition-all ml-5`}>{links.name}
+                          className={`${links.path===pathname && "text-white border-b-2 border-accent"} capitalize font-medium hover:text-blue transition-all ml-5`}>{links.name}
                           </Link>
                     )
                     

@@ -2,23 +2,29 @@ export const dynamic = "force-dynamic";
 import { ObjectId } from "mongodb";
 import connectDB from "@/connectdb";
 
-
 type PageProps = {
-  params: Promise<{ id: string }>;
+  params: { id: string }; // ✅ Promise নয়
 };
 
 
-const Page = async ({ params }: PageProps) => {
-  const { id } = await params; // ❌ await লাগবে না
+
+const Page = async ({params,}: {params: Promise<{ id: string }>})=>{
+ const { id } =  await params; // ❌ await লাগবে না
+
 
   console.log(id)
   const db = await connectDB();
+  console.log(db)
   const collection = db.collection("lawyerBD");
+
+const all = await collection.find({}).toArray();
+console.log(all);
 
   // 🔎 _id দিয়ে ডাটা খোঁজা
   const data = await collection.findOne({
-    _id: new ObjectId(id),
-  });
+  _id: id, // ✅ string হিসেবেই খুঁজবে
+});
+
   console.log(data)
 
   if (!data) {
@@ -52,13 +58,13 @@ const  {
     workPlace,
     image,
     Specialist,
-    phone,
+    phone,description,
     ChamberAddress} = data;
 
   return (
     <>
     {/* ================= MOBILE VIEW ================= */}
-      <div className="block sm:hidden bg-gray-100 min-h-screen pb-10">
+      <div className="block sm:hidden bg-gray-100  pb-10">
         <div className="bg-white m-3 p-4 rounded-lg shadow">
           <div className="flex gap-4">
             <img
@@ -93,7 +99,7 @@ const  {
       </div>
 
       {/* ================= DESKTOP / LAPTOP VIEW ================= */}
-      <div className="hidden sm:block sm:flex justify-center bg-gray-100 py-6 print:bg-white print:py-0">
+      <div className="hidden sm:flex justify-center bg-gray-100 py-6 print:bg-white print:py-0">
         <div
           className="bg-white text-black shadow-lg print:shadow-none"
           style={{
@@ -158,11 +164,7 @@ const  {
             </h2>
 
             <p className="mt-3 text-justify leading-7">
-              I am a practicing advocate dedicated to providing legal services
-              with honesty, professionalism, and commitment. I regularly handle
-              court matters and client consultations with responsibility and
-              transparency. My goal is to ensure proper legal guidance and
-              justice for every client.
+              {description}
             </p>
           </div>
 
@@ -195,3 +197,7 @@ const  {
 //bangladesh
 
 export default Page;
+// export default async function Page({params,}: {params: Promise<{ id: string }>}) {
+//   const { id } = await params
+//   return <div>My Post: {id}</div>
+// }

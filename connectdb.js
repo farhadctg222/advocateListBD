@@ -37,7 +37,6 @@
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-console.log(process.env.MONGO_URI)
 
 
 let db;
@@ -50,7 +49,6 @@ const connectDB = async () => {
 
   try {
     const uri = process.env.MONGO_URI; // .env থেকে নিবে
-    console.log(uri)
 
     client = new MongoClient(uri, {
       serverApi: {

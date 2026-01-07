@@ -4,6 +4,7 @@ import MobileNav from './MobileNav';
 import Nav from './Nav';
 import React from 'react';
 
+
 const NavBar = () => {
     return (
         <header className="py-5 sticky  top-0 bg-[#1F5F5B] xl:py-8 text-">
@@ -18,7 +19,7 @@ const NavBar = () => {
                 <div className=" hidden xl:flex items-center gap-3">
                    <Nav></Nav>
                     <Link href="/contact">
-                    <button className=" bg-amber-400 text-white btn-success mr-5">Donation</button>
+                    <button className=" bg-amber-400 text-white mr-5">Donation</button>
                     </Link>
 
                 </div>

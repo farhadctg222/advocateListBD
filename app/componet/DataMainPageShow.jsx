@@ -45,6 +45,7 @@ const DataMainPageShow = async () => {
   // const revised = [...services].reverse();
   // const data = revised.slice(0, 10);
   const data = [...(lawdata || [])].reverse().slice(0, 10);
+  console.log(data)
 
 
   
@@ -81,7 +82,7 @@ const DataMainPageShow = async () => {
                 <h5>{post.Desination}</h5>
                 <h5 className="font-bold">{post.workPlace}</h5>
 
-                <Link href={`/api/${slug}`}>
+                <Link href={`api/${slug}`}>
                   <button className="seeChamber">See Chamber</button>
                 </Link>
               </div>
