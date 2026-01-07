@@ -57,6 +57,41 @@ const  {
 
   return (
     <>
+    {/* ================= MOBILE VIEW ================= */}
+      <div className="sm:hidden bg-gray-100 min-h-screen pb-24">
+        <div className="bg-white m-3 p-4 rounded-lg shadow">
+          <div className="flex gap-4">
+            <img
+              src={image}
+              alt={name}
+              className="w-24 h-28 object-cover rounded border"
+            />
+
+            <div>
+              <h1 className="text-lg font-bold">{name}</h1>
+              <p className="text-sm">{Education}</p>
+              <p className="text-sm font-semibold">{Desination}</p>
+              <p className="text-xs">{workPlace}</p>
+              <p className="text-red-600 text-sm">{Specialist}</p>
+            </div>
+          </div>
+
+          <div className="mt-4 text-sm space-y-1">
+            <p><b>Chamber:</b> {ChamberName}</p>
+            <p><b>Address:</b> {ChamberAddress}</p>
+            <p><b>Phone:</b> {phone}</p>
+          </div>
+        </div>
+
+        {/* Sticky Call Button */}
+        <a
+          href={`tel:${phone}`}
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg font-semibold z-50"
+        >
+          📞 Call Now
+        </a>
+      </div>
+
       {/* ================= DESKTOP / LAPTOP VIEW ================= */}
       <div className="hidden sm:flex justify-center bg-gray-100 py-6 print:bg-white print:py-0">
         <div
@@ -152,40 +187,7 @@ const  {
         </div>
       </div>
 
-      {/* ================= MOBILE VIEW ================= */}
-      <div className="sm:hidden bg-gray-100 min-h-screen pb-24">
-        <div className="bg-white m-3 p-4 rounded-lg shadow">
-          <div className="flex gap-4">
-            <img
-              src={image}
-              alt={name}
-              className="w-24 h-28 object-cover rounded border"
-            />
-
-            <div>
-              <h1 className="text-lg font-bold">{name}</h1>
-              <p className="text-sm">{Education}</p>
-              <p className="text-sm font-semibold">{Desination}</p>
-              <p className="text-xs">{workPlace}</p>
-              <p className="text-red-600 text-sm">{Specialist}</p>
-            </div>
-          </div>
-
-          <div className="mt-4 text-sm space-y-1">
-            <p><b>Chamber:</b> {ChamberName}</p>
-            <p><b>Address:</b> {ChamberAddress}</p>
-            <p><b>Phone:</b> {phone}</p>
-          </div>
-        </div>
-
-        {/* Sticky Call Button */}
-        <a
-          href={`tel:${phone}`}
-          className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg font-semibold z-50"
-        >
-          📞 Call Now
-        </a>
-      </div>
+      
     </>
   );
 };
