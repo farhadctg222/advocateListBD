@@ -58,7 +58,7 @@ const  {
   return (
     <>
     {/* ================= MOBILE VIEW ================= */}
-      <div className="sm:hidden bg-gray-100 min-h-screen pb-24">
+      <div className="block sm:hidden bg-gray-100 min-h-screen pb-10">
         <div className="bg-white m-3 p-4 rounded-lg shadow">
           <div className="flex gap-4">
             <img
@@ -85,7 +85,7 @@ const  {
 
         {/* Sticky Call Button */}
         <a
-          href={`tel:${phone}`}
+          href={`${phone}`}
           className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg font-semibold z-50"
         >
           📞 Call Now
@@ -93,7 +93,7 @@ const  {
       </div>
 
       {/* ================= DESKTOP / LAPTOP VIEW ================= */}
-      <div className="hidden sm:flex justify-center bg-gray-100 py-6 print:bg-white print:py-0">
+      <div className="hidden sm:block sm:flex justify-center bg-gray-100 py-6 print:bg-white print:py-0">
         <div
           className="bg-white text-black shadow-lg print:shadow-none"
           style={{
