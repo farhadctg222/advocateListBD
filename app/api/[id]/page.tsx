@@ -3,13 +3,17 @@ import { ObjectId } from "mongodb";
 import connectDB from "@/connectdb";
 
 
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
 
-const Page = async ({ params }: { params: { id: string } }) => {
-  const { id } =  params; // ❌ await লাগবে না
 
+const Page = async ({ params }: PageProps) => {
+  const { id } = await params; // ❌ await লাগবে না
+
+  console.log(id)
   const db = await connectDB();
   const collection = db.collection("lawyerBD");
-  console.log(collection)
 
   // 🔎 _id দিয়ে ডাটা খোঁজা
   const data = await collection.findOne({

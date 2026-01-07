@@ -5,7 +5,7 @@ import NavBar from './componet/NavBar';
 import Foter from './componet/Foter';
 import LegalLayout from './componet/LegalLayout';
 import FAQPage from './componet/FAQPage';
-
+export const dynamic = "force-dynamic";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
