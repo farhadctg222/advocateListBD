@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function ServiceAds() {
   const services = [
     {
@@ -37,45 +35,45 @@ export default function ServiceAds() {
   ];
 
   return (
-    <section className="bg-linear-to-br from-slate-100 to-emerald-100 py-8 px-4">
+    <section className="bg-gradient-to-br from-slate-100 to-emerald-100 py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-10">
-          Our Sponser
+          Our Sponsor Services
         </h2>
 
-        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border shadow-sm hover:shadow-lg transition overflow-hidden"
+              className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
             >
-              {/* Image */}
-              <div className=" h-40 w-full">
-                <img 
-  src={item.image}
-  alt={item.title}
-  className="w-full h-60 aspect-4/3 object-cover rounded-t-xl"
-/>
-
+              {/* 🔒 IMAGE SAFE ZONE */}
+              <div className="relative w-full h-44 overflow-hidden bg-white flex items-center justify-center">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
 
-              {/* Content */}
+
+              {/* CONTENT */}
               <div className="p-4 text-center">
                 <h3 className="text-lg font-semibold text-slate-800">
                   {item.title}
                 </h3>
+
                 <p className="text-xs text-emerald-600 mb-2">
                   {item.subtitle}
                 </p>
 
-                <p className="text-sm text-slate-600 mb-4">
+                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
                   {item.desc}
                 </p>
 
-                {/* Call Button */}
                 <a
                   href={item.phone}
-                  className="block w-full bg-emerald-600 text-white py-2 rounded-xl text-sm font-medium hover:bg-emerald-700 transition"
+                  className="block w-full bg-emerald-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition"
                 >
                   📞 Call Now
                 </a>
