@@ -44,18 +44,14 @@ const Division = () => {
 
 
 
-                    <Link href="/">  <button>Dhaka</button></Link>
-                    <Link href="/"> <button>Chattogram</button></Link>
-                    <Link href="/"><button>Rajshahi</button></Link>
-                    <Link href="/"><button>Sylhet</button></Link>
-                    <Link href="/"><button>Rangpur</button> </Link>
-                    <Link href="/"><button>Khulna</button></Link>
-                    <Link href="/"><button>Barisal</button></Link>
-                    <Link href="/"><button>Mymensingh</button></Link>
-
-
-
-
+                    <Link href="/dhaka">  <button>Dhaka</button></Link>
+                    <Link href="/chattogram"> <button>Chattogram</button></Link>
+                    <Link href="/rajshahi"><button>Rajshahi</button></Link>
+                    <Link href="/sylhet"><button>Sylhet</button></Link>
+                    <Link href="/rangpur"><button>Rangpur</button> </Link>
+                    <Link href="/khulna"><button>Khulna</button></Link>
+                    <Link href="/barisal"><button>Barisal</button></Link>
+                    <Link href="/mymensingh"><button>Mymensingh</button></Link>
 
                 </div>
             </div><br />
