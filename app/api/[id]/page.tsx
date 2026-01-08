@@ -86,6 +86,7 @@ const  {
             <p><b>Chamber:</b> {ChamberName}</p>
             <p><b>Address:</b> {ChamberAddress}</p>
             <p><b>Phone:</b> {phone}</p>
+            <p><b>Aboute:</b> {description}</p>
           </div>
         </div>
 
@@ -152,6 +153,7 @@ const  {
                 <tr>
                   <td className="border p-2 font-semibold">Phone</td>
                   <td className="border p-2">{phone}</td>
+                  
                 </tr>
               </tbody>
             </table>
