@@ -35,7 +35,7 @@ export default function ServiceAds() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-slate-100 to-emerald-100 py-10 px-4">
+    <section className="bg-linear-to-br from-slate-100 to-emerald-100 py-10 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-slate-800 mb-10">
           Our Sponsor Services
