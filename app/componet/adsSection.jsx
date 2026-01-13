@@ -48,7 +48,7 @@ export default function ServiceAds() {
               className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
             >
               {/* 🔒 IMAGE SAFE ZONE */}
-              <div className="relative w-full h-44 overflow-hidden bg-white flex items-center justify-center">
+              <div className=" w-full h-44 overflow-hidden bg-white flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.title}

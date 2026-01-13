@@ -44,18 +44,39 @@ const DataMainPageShow = async () => {
   // const services = lawdata
   // const revised = [...services].reverse();
   // const data = revised.slice(0, 10);
-  const data = [...(lawdata || [])].reverse().slice(0, 10);
+  const data = [...(lawdata || [])].reverse().slice(0, 12);
   console.log(data)
 
 
   
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="grid items-center justify-center lg-justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
   {data.length === 0 ? (
-    <p className="text-center text-red-600 font-bold animate-pulse">
-      ⚠️ ডাটা পাওয়া যাচ্ছে না। অনুগ্রহ করে পরে আবার চেষ্টা করুন।
+   <div className="flex flex-col items-center justify-center py-12">
+  {/* Lock Icon */}
+  <div className="relative">
+    <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center animate-bounce">
+      <span className="text-3xl">🔒</span>
+    </div>
+
+    {/* Pulse Ring */}
+    <span className="absolute inset-0 rounded-full border-2 border-red-400 animate-ping"></span>
+  </div>
+
+  {/* Message Box */}
+  <div className="mt-6 bg-red-50 border border-red-300 rounded-xl px-6 py-4 shadow-md animate-fadeIn">
+    <p className="text-center text-red-600 font-semibold text-lg">
+      ⚠️ ডাটা পাওয়া যাচ্ছে না
     </p>
+    <p className="text-center text-red-500 text-sm mt-1">
+      অনুগ্রহ করে পরে আবার চেষ্টা করুন
+    </p>
+  </div>
+</div>
+
+
+
   ) : (
     data.map((post, index) => {
       const slug = post._id;
