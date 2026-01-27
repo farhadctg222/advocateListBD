@@ -14,7 +14,7 @@ const Header = () => {
                <Link href="/" style={{textDecoration:'none'}}> <li>Lawyer</li></Link>
             </ul>
            </nav>
-          <div className="flex items-center justify-center bg-white/70 ">
+          <div className="flex items-center justify-center bg-white ">
   <div className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-lg border">
 
     {/* Search Input */}

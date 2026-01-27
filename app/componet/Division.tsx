@@ -55,7 +55,11 @@ const Division = () => {
 
 
                     <Link href="/div-dhaka">  <button>Dhaka</button></Link>
-                    <Link href="/div-chattogram"> <button>Chattogram</button></Link>
+                   <Link href="/div-chattogram">
+                        <button className="activeBtn">
+                            Chattogram
+                        </button>
+                    </Link>
                     <Link href="/div-rajshahi"><button>Rajshahi</button></Link>
                     <Link href="/div-sylhet"><button>Sylhet</button></Link>
                     <Link href="/div-rangpur"><button>Rangpur</button> </Link>

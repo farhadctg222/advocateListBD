@@ -1,17 +1,21 @@
-import React from 'react';
-import Header from './componet/Header';
+
+import React, { Suspense } from 'react';
 import Division from './componet/Division';
-import CoordinatorMessage from './componet/CoordinatorMessage';
+import Headers from './componet/Header';
 import ServiceAds from './componet/adsSection';
+import CoordinatorMessage from './componet/CoordinatorMessage';
+
 const page = () => {
   return (
     <div>
-     <Header></Header>
+    <Suspense fallback={<div>Loading...</div>}>
+      
+     <Headers></Headers>
      <Division></Division>
      <ServiceAds></ServiceAds>
-     
+
      <CoordinatorMessage></CoordinatorMessage>
-     
+     </Suspense>
     </div>
   );
 };

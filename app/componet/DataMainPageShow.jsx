@@ -3,20 +3,7 @@
 import Link from "next/link";
 import  './Division.css'
 
-// const getData = async () => {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api`,
-//     {
-//       cache: "no-store",
-//       next: { revalidate: 10 }, // Next.js App Router way
-//     }
-//   );
-// console.log(res)
-//   if (!res.ok) {
-//     return <h1> Data Fetch Not Show </h1>;
-//   }
 
-//   return res.json();
-// };
 const getData = async () => {
   try {
     const res = await fetch(
@@ -44,10 +31,10 @@ const DataMainPageShow = async () => {
   // const services = lawdata
   // const revised = [...services].reverse();
   // const data = revised.slice(0, 10);
-  const data = [...(lawdata || [])].reverse().slice(0, 12);
-  console.log(data)
+  const data = [...(lawdata || [])].reverse().slice(0, 9);
 
 
+    
   
 
   return (
@@ -79,11 +66,12 @@ const DataMainPageShow = async () => {
 
   ) : (
     data.map((post, index) => {
-      const slug = post._id;
+      
+      
 
       return (
         <div
-          key={slug}
+          key={post.slug}
           className="
             ProfileCard
             bg-slate-50
@@ -128,43 +116,55 @@ const DataMainPageShow = async () => {
             </h1>
 
             <h5 className="text-sm text-gray-700">
-              {post.Education}
+              {post.education}
             </h5>
 
             <h6 className="text-sm text-red-600 font-semibold">
-              {post.Specialist}
+              {post.specialist}
             </h6>
 
             <h5 className="text-sm text-gray-800">
-              {post.Desination}
+              {post.designation}
             </h5>
 
-            <h5 className="text-sm font-bold text-gray-900">
-              {post.workPlace}
-            </h5>
+            <h2 className="text-sm text-md  font-bold font-red text-red-700">
+              {post.court_level}
+            </h2>
           </div>
 
-          {/* Button */}
-          <Link href={`api/${slug}`}>
-            <button
-              className="
-                mt-4
-                px-4 py-2
-                bg-indigo-600
-                text-white
-                rounded-full
-                text-sm
-                font-semibold
-                transition-all
-                duration-300
-                hover:bg-indigo-700
-                hover:scale-105
-                active:scale-95
-              "
+          {/* Status Based Action */}
+      {post.status === "Active" ? (
+        <a href={`/lawyers/${post.id}/${post.slug}`}>
+          <button className="mt-4 w-full px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+            See Chamber
+          </button>
+        </a>
+      ) : (
+        <div className="mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded-lg text-center">
+          <p className="text-sm font-semibold text-yellow-700">
+            ⚠️ এই মুহূর্তে চেম্বারটি সক্রিয় নেই  
+          </p>
+
+          <p className="text-xs text-gray-600 mt-1">
+            অনুগ্রহ করে সমন্বয়কের সাথে যোগাযোগ করুন
+          </p>
+
+          {post.coordinator_phone ? (
+            <a
+              href={`tel:${post.coordinator_phone}`}
+              className="mt-3 inline-block w-full"
             >
-              See Chamber
-            </button>
-          </Link>
+              <button className="w-full px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+                📞 Call Co-ordinator
+              </button>
+            </a>
+          ) : (
+            <p className="text-xs text-red-500 mt-2">
+              📵 ফোন নম্বর পাওয়া যায়নি
+            </p>
+          )}
+        </div>
+      )}
         </div>
       );
     })

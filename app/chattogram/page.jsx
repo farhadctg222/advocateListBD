@@ -71,55 +71,119 @@
 //     </div>
 //   );
 // }
-import Link from 'next/link';
+
 import React from 'react';
 
-const page = () => {
-  return (
-    <div className="flex flex-wrap justify-center gap-4 p-6 bg-gray-50 rounded-lg shadow-md">
-  <Link href="/dhaka">
-    <button className="bg-blue-600 text-white px-5 py-3 rounded-md shadow hover:bg-blue-700 transition">
-      Ainjib Douel Bhabon
-    </button>
-  </Link>
-  <Link href="/chattogram">
-    <button className="bg-green-600 text-white px-5 py-3 rounded-md shadow hover:bg-green-700 transition">
-      Annex Bhabon
-    </button>
-  </Link>
-  <Link href="/rajshahi">
-    <button className="bg-purple-600 text-white px-5 py-3 rounded-md shadow hover:bg-purple-700 transition">
-      Annex Bhabon
-    </button>
-  </Link>
-  <Link href="/sylhet">
-    <button className="bg-pink-600 text-white px-5 py-3 rounded-md shadow hover:bg-pink-700 transition">
-      Shapla Bhabon
-    </button>
-  </Link>
-  <Link href="/rangpur">
-    <button className="bg-yellow-500 text-gray-900 px-5 py-3 rounded-md shadow hover:bg-yellow-600 transition">
-      Douel Bhabon
-    </button>
-  </Link>
-  <Link href="/khulna">
-    <button className="bg-indigo-600 text-white px-5 py-3 rounded-md shadow hover:bg-indigo-700 transition">
-      Khulna
-    </button>
-  </Link>
-  <Link href="/barisal">
-    <button className="bg-red-600 text-white px-5 py-3 rounded-md shadow hover:bg-red-700 transition">
-      Barisal
-    </button>
-  </Link>
-  <Link href="/mymensingh">
-    <button className="bg-teal-600 text-white px-5 py-3 rounded-md shadow hover:bg-teal-700 transition">
-      Mymensingh
-    </button>
-  </Link>
-</div>
+// const page = () => {
+//   return (
+//     <div className="flex flex-wrap justify-center gap-4 p-6 bg-gray-50 rounded-lg shadow-md">
+//   <Link href="/dhaka">
+//     <button className="bg-blue-600 text-white px-5 py-3 rounded-md shadow hover:bg-blue-700 transition">
+//       Ainjib Douel Bhabon
+//     </button>
+//   </Link>
+//   <Link href="/chattogram">
+//     <button className="bg-green-600 text-white px-5 py-3 rounded-md shadow hover:bg-green-700 transition">
+//       Annex Bhabon
+//     </button>
+//   </Link>
+//   <Link href="/rajshahi">
+//     <button className="bg-purple-600 text-white px-5 py-3 rounded-md shadow hover:bg-purple-700 transition">
+//       Annex Bhabon
+//     </button>
+//   </Link>
+//   <Link href="/sylhet">
+//     <button className="bg-pink-600 text-white px-5 py-3 rounded-md shadow hover:bg-pink-700 transition">
+//       Shapla Bhabon
+//     </button>
+//   </Link>
+//   <Link href="/rangpur">
+//     <button className="bg-yellow-500 text-gray-900 px-5 py-3 rounded-md shadow hover:bg-yellow-600 transition">
+//       Douel Bhabon
+//     </button>
+//   </Link>
+//   <Link href="/khulna">
+//     <button className="bg-indigo-600 text-white px-5 py-3 rounded-md shadow hover:bg-indigo-700 transition">
+//       Khulna
+//     </button>
+//   </Link>
+//   <Link href="/barisal">
+//     <button className="bg-red-600 text-white px-5 py-3 rounded-md shadow hover:bg-red-700 transition">
+//       Barisal
+//     </button>
+//   </Link>
+//   <Link href="/mymensingh">
+//     <button className="bg-teal-600 text-white px-5 py-3 rounded-md shadow hover:bg-teal-700 transition">
+//       Mymensingh
+//     </button>
+//   </Link>
+// </div>
 
+//   );
+// };
+
+// export default page;
+
+
+
+import Link from "next/link";
+import connectDB from "../../connectdb";
+
+
+
+const page = async () => {
+  const db = await connectDB();   // 🔑 এখানে await
+  const [rows] = await db.query(
+    "SELECT * FROM buildings"
+  );
+console.log(rows)
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 rounded-xl">
+  {rows.map((item) => (
+    <Link
+      key={item.id}
+      href={`/${item.building_name.toLowerCase().replace(/\s+/g, '-')}`}
+      className="group"
+    >
+      <div className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300">
+
+        {/* Header */}
+        <div className="flex items-center gap-4 p-5 border-b bg-gray-50 rounded-t-xl">
+          <img
+            src={item.logo || "/court-logo.png"}
+            alt={item.building_name}
+            className="w-12 h-12 object-contain"
+          />
+          <div>
+            <h2 className="text-lg font-semibold text-gray-800">
+              {item.building_name}
+            </h2>
+            <p className="text-sm text-gray-500">
+              Judicial Building
+            </p>
+          </div>
+        </div>
+
+        {/* Body */}
+        <div className="p-5 text-sm text-gray-600">
+          বাংলাদেশ সুপ্রিম কোর্ট সংশ্লিষ্ট ভবন  
+          <br />
+          আইনজীবী ও নাগরিক সেবার জন্য নির্ধারিত
+        </div>
+
+        {/* Footer */}
+        <div className="px-5 py-3 bg-gray-50 text-right rounded-b-xl">
+          <span className="text-blue-700 font-medium group-hover:underline">
+            বিস্তারিত দেখুন →
+          </span>
+        </div>
+
+      </div>
+    </Link>
+  ))}
+</div>
   );
 };
 
 export default page;
+

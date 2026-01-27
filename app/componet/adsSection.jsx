@@ -1,38 +1,88 @@
-export default function ServiceAds() {
-  const services = [
-    {
-      id: 1,
-      title: "Stamp Vendor",
-      subtitle: "Government Licensed",
-      image: "https://i.ibb.co/bW8VGFZ/farhad.png",
-      desc: "নন-জুডিশিয়াল স্ট্যাম্প, কোর্ট ফি ও রেভিনিউ স্ট্যাম্প",
-      phone: "tel:01305573617",
+const getServices = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/service`,
+      { next: { revalidate: 60 } } // SEO + cache
+    );
+
+    if (!res.ok) return [];
+    return res.json();
+  } catch {
+    return [];
+  }
+};
+export async function generateMetadata() {
+  const title =
+    "Sponsor Legal Services in Bangladesh | Stamp Vendor, Notary, Deed Writer";
+
+  const description =
+    "Government licensed stamp vendor, notary public, deed writer and legal sponsor services in Bangladesh. Call directly for affidavit, stamp & court services.";
+
+  const url = "https://lawyerbangladesh.com";
+  const image = "https://lawyerbangladesh.com/seo/service-ads.jpg";
+
+  return {
+    title,
+    description,
+
+    keywords: [
+      "Stamp Vendor Bangladesh",
+      "Notary Public Bangladesh",
+      "Deed Writer Service",
+      "Court Stamp Buy",
+      "Affidavit Service Bangladesh",
+      "Legal Sponsor Services",
+      "Lawyer Bangladesh Services",
+    ],
+
+    alternates: {
+      canonical: url,
     },
-    {
-      id: 2,
-      title: "Notary Public",
-      subtitle: "Affidavit & Attestation",
-      image: "https://i.ibb.co/TBvQSG2N/IMG-20251211-161141.jpg",
-      desc: "নোটারি সত্যায়ন, হলফনামা ও ভেরিফিকেশন",
-      phone: "tel:01305573617",
+
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Lawyer Bangladesh",
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: "Sponsor Legal Services in Bangladesh",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
     },
-    {
-      id: 3,
-      title: "Deed Writer",
-      subtitle: "Registered Deed Service",
-      image: "/ads/deed.jpg",
-      desc: "দলিল লেখা, রেজিস্ট্রেশন ও খসড়া প্রস্তুত",
-      phone: "tel:01305573617",
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
     },
-    {
-      id: 4,
-      title: "Justice Book Seller",
-      subtitle: "Law & Court Books",
-      image: "https://i.ibb.co/4R8q5YF/127.png",
-      desc: "আইন বিষয়ক বই, জাস্টিস বুক ও কোর্ট গাইড",
-      phone: "tel:01305573617",
+
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
     },
-  ];
+  };
+}
+
+
+
+const ServiceAds = async () => {
+  const services = await getServices();
+
+  if (services.length === 0) return null;
 
   return (
     <section className="bg-linear-to-br from-slate-100 to-emerald-100 py-10 px-4">
@@ -47,15 +97,14 @@ export default function ServiceAds() {
               key={item.id}
               className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
             >
-              {/* 🔒 IMAGE SAFE ZONE */}
-              <div className=" w-full h-44 overflow-hidden bg-white flex items-center justify-center">
+              {/* IMAGE */}
+              <div className="w-full h-44 bg-white flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>
-
 
               {/* CONTENT */}
               <div className="p-4 text-center">
@@ -67,12 +116,12 @@ export default function ServiceAds() {
                   {item.subtitle}
                 </p>
 
-                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
-                  {item.desc}
+                <p className="text-sm text-slate-600 mb-4">
+                  {item.description}
                 </p>
 
                 <a
-                  href={item.phone}
+                  href={`tel:${item.phone}`}
                   className="block w-full bg-emerald-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition"
                 >
                   📞 Call Now
@@ -85,3 +134,4 @@ export default function ServiceAds() {
     </section>
   );
 }
+export default ServiceAds;
