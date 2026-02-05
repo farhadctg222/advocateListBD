@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import mysql from "mysql2/promise";
 
 let connection = null;
@@ -10,11 +12,11 @@ const connectDB = async () => {
 
   try {
     connection = await mysql.createConnection({
-      host: process.env.MYSQL_HOST || "localhost",
-      user: process.env.MYSQL_USER || "root",
-      password: "", // XAMPP এ সাধারণত password নাই
-      database: process.env.MYSQL_DATABASE || "advocate_list_bd",
-      port: Number(process.env.MYSQL_PORT) || 3306,
+      host: process.env.MYSQL_HOST,
+      user: process.env.MYSQL_USER,
+      password: process.env.MYSQL_PASSWORD, // XAMPP এ সাধারণত password নাই
+      database: process.env.MYSQL_DATABASE,
+      port: Number(process.env.MYSQL_PORT),
     });
 
     console.log("✅ MySQL database connected successfully");
