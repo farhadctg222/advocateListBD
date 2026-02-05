@@ -78,7 +78,7 @@ const DataMainPageShow = async () => {
             bg-slate-50
             border border-gray-300
             rounded-xl
-            p-4
+            p-3
             text-center
             shadow-sm
             transition-all
@@ -99,7 +99,7 @@ const DataMainPageShow = async () => {
               src={post.image}
               alt={post.name}
               className="
-                w-28 h-28
+                w-25 h-25
                 rounded-full
                 object-cover
                 border-4 border-indigo-500
