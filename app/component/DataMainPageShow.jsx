@@ -53,7 +53,7 @@ const DataMainPageShow = async () => {
   </div>
 
   {/* Message Box */}
-  <div className="mt-6 bg-red-50 border border-red-300 rounded-xl px-6 py-4 shadow-md animate-fadeIn">
+  <div className="mt-6  bg-red-50 border border-red-300 rounded-xl px-6 py-4 shadow-md animate-fadeIn">
     <p className="text-center text-red-600 font-semibold text-lg">
       ⚠️ ডাটা পাওয়া যাচ্ছে না
     </p>

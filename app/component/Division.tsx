@@ -80,9 +80,12 @@ const Division = () => {
             </div>
 
             <div className="ProfileCard" style={{ border: '1px solid black', margin: '3px', textAlign: 'center', backgroundColor: '#f0f0f0' }} >
-                <h2 className='lawItps'>About Lawyer Bangladesh</h2>
-                <p>Lawyer-bangladesh.com is going to be the best website in Bangladesh. Common people will benefit through this web site. Skilled lawyers and accountants profiles on this web site with their pictures, their names, their educational qualifications
-                    Can see office address. Remember that Lawyers-bangladesh.com does not give an Appointment to anyone.</p>
+                <h2 className='lawItps'>AdvocateListBD.com একটি নিরপেক্ষ আইনজীবী ডিরেক্টরি ওয়েবসাইট।
+এখানে আইনজীবীদের প্রোফাইল, শিক্ষাগত যোগ্যতা, চেম্বারের ঠিকানা ও যোগাযোগের তথ্য প্রকাশ করা হয়।
+
+এই প্ল্যাটফর্মের উদ্দেশ্য হলো—সাধারণ মানুষ যেন সহজে প্রয়োজনীয় তথ্য খুঁজে পেতে পারেন। <br />
+
+⚠️ AdvocateListBD কোনো আইনজীবীর প্রতিনিধি নয় এবং কোনো অ্যাপয়েন্টমেন্ট বা আইনি সেবা সরাসরি প্রদান করে না।</h2>
 
             </div>
 
