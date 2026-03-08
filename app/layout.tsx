@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from './component/NavBar';
 import Foter from './component/Foter';
 import LegalLayout from './component/LegalLayout';
 import FAQPage from './component/FAQPage';
+
 export const dynamic = "force-dynamic";
 
 
@@ -53,6 +53,7 @@ export default function RootLayout({
            {children}
       <LegalLayout></LegalLayout>
       <FAQPage></FAQPage>
+      
       <Foter></Foter>
         </div>
         

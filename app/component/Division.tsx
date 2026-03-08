@@ -6,6 +6,7 @@ import DataMainPageShow from './DataMainPageShow';
 import Loading from './loading'
 
 
+
 const Division = () => {
 
 
@@ -78,6 +79,7 @@ const Division = () => {
                 </Suspense>
 
             </div>
+           
 
             <div className="ProfileCard" style={{ border: '1px solid black', margin: '3px', textAlign: 'center', backgroundColor: '#f0f0f0' }} >
                 <h2 className='lawItps'>AdvocateListBD.com একটি নিরপেক্ষ আইনজীবী ডিরেক্টরি ওয়েবসাইট।

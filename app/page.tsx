@@ -2,9 +2,8 @@
 import React, { Suspense } from 'react';
 import Division from './component/Division';
 import Headers from './component/Header';
-import ServiceAds from './component/adsSection';
 import CoordinatorMessage from './component/CoordinatorMessage';
-
+import ServiceAds from './component/ServiceAds';
 const page = () => {
   return (
     <div>
@@ -12,10 +11,11 @@ const page = () => {
       
      <Headers></Headers>
      <Division></Division>
-     <ServiceAds></ServiceAds>
-
+    <ServiceAds></ServiceAds>
      <CoordinatorMessage></CoordinatorMessage>
      </Suspense>
+    
+
     </div>
   );
 };
