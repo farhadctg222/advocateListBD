@@ -1,83 +1,4 @@
-const getServices = async () => {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/service`,
-      { next: { revalidate: 60 } }
-    );
-
-    if (!res.ok) return [];
-    
-    const data = await res.json();
-    console.log(data)
-
-    // যদি array না আসে, তাহলেও crash হবে না
-    return Array.isArray(data) ? data : [];
-  } catch (error) {
-    console.error("Failed to fetch services:", error);
-    return [];
-  }
-};
-
-export async function generateMetadata() {
-  const title =
-    "Sponsor Legal Services in Bangladesh | Stamp Vendor, Notary, Deed Writer";
-
-  const description =
-    "Government licensed stamp vendor, notary public, deed writer and legal sponsor services in Bangladesh. Call directly for affidavit, stamp & court services.";
-
-  const url = "https://advocatelistbd.com";
-  const image = "https://advocatelistbd.com/seo/service-ads.jpg";
-
-  return {
-    title,
-    description,
-    keywords: [
-      "Stamp Vendor Bangladesh",
-      "Notary Public Bangladesh",
-      "Deed Writer Service",
-      "Court Stamp Buy",
-      "Affidavit Service Bangladesh",
-      "Legal Sponsor Services",
-      "Lawyer Bangladesh Services",
-    ],
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title,
-      description,
-      url,
-      siteName: "Lawyer Bangladesh",
-      images: [
-        {
-          url: image,
-          width: 1200,
-          height: 630,
-          alt: "Sponsor Legal Services in Bangladesh",
-        },
-      ],
-      locale: "en_US",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [image],
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-snippet": -1,
-        "max-image-preview": "large",
-        "max-video-preview": -1,
-      },
-    },
-  };
-}
+import { getServices } from '../../lib/getService';
 
 const ServiceAds = async () => {
   const services = await getServices();
@@ -105,11 +26,11 @@ const ServiceAds = async () => {
                 key={item?.id || index}
                 className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
               >
-                <div className="w-full h-44 bg-white flex items-center justify-center">
+                <div className="w-full h-44 bg-white flex items-center justify-center overflow-hidden">
                   <img
                     src={item?.image || "/placeholder.jpg"}
                     alt={item?.title || "Service image"}
-                    className="max-w-full max-h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 

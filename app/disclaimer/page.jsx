@@ -48,7 +48,7 @@ export default function Disclaimer() {
         <section className="mb-6">
           <h2 className="text-2xl font-semibold text-cyan-800 mb-3">৬. শর্তাবলি পরিবর্তন</h2>
           <p className="text-cyan-900 leading-relaxed text-lg">
-            AdvocateListBD.com যেকোনো সময় পূর্ব اطلاع ছাড়াই এই Disclaimer শর্তাবলি পরিবর্তন বা আপডেট করার অধিকার সংরক্ষণ করে। সাইট ব্যবহার করার মাধ্যমে আপনি যেকোনো পরিবর্তনে সম্মত হন।
+            AdvocateListBD.com যেকোনো সময় পূর্ব ঘোষনা ছাড়াই এই Disclaimer শর্তাবলি পরিবর্তন বা আপডেট করার অধিকার সংরক্ষণ করে। সাইট ব্যবহার করার মাধ্যমে আপনি যেকোনো পরিবর্তনে সম্মত হন।
           </p>
         </section>
 

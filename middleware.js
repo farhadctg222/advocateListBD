@@ -1,35 +1,34 @@
 import { NextResponse } from "next/server";
 
 export function middleware(req) {
-  const p = req.nextUrl.pathname;
+  const pathname = req.nextUrl.pathname;
 
-  // শুধু /api রুট প্রটেক্ট
-  if (!p.startsWith("/api")) return NextResponse.next();
-
-  // session route allow (trailing slash হলেও allow)
-  if (p.startsWith("/api/auth/session")) return NextResponse.next();
-
-  const host = req.headers.get("host") || "";
-  const cookie = req.headers.get("cookie") || "";
-
-  const allowedHost = process.env.ALLOWED_HOST || "";
-  const token = process.env.SITE_SESSION_TOKEN || "";
-
-  if (!allowedHost || !token) {
-    return NextResponse.json({ message: "Forbidden" }, { status: 403 });
+  // শুধু /api route protect হবে
+  if (!pathname.startsWith("/api")) {
+    return NextResponse.next();
   }
 
-  // dev helper: allow 127.0.0.1
-  const okHost =
-    host === allowedHost ||
-    (allowedHost === "localhost:3000" && host === "127.0.0.1:3000");
-
-  if (!okHost) {
-    return NextResponse.json({ message: "Forbidden" }, { status: 403 });
+  // session create route allow
+  if (pathname.startsWith("/api/auth/session")) {
+    return NextResponse.next();
   }
 
-  if (!cookie.includes(`site_session=${token}`)) {
-    return NextResponse.json({ message: "Forbidden" }, { status: 403 });
+  const requestedWith = req.headers.get("x-site-request") || "";
+  const cookieToken = req.cookies.get("site_session")?.value || "";
+  const validToken = process.env.SITE_SESSION_TOKEN || "";
+
+  if (requestedWith !== "advocatelistbd") {
+    return NextResponse.json(
+      { success: false, message: "Forbidden: Invalid Request Header" },
+      { status: 403 }
+    );
+  }
+
+  if (!validToken || cookieToken !== validToken) {
+    return NextResponse.json(
+      { success: false, message: "Forbidden: Invalid Session" },
+      { status: 403 }
+    );
   }
 
   return NextResponse.next();

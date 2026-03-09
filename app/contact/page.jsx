@@ -23,11 +23,11 @@ export default function ContactUs() {
           </p>
           <p className="text-indigo-900 text-lg flex items-center gap-3">
             <span className="text-indigo-600 text-2xl">📱</span>
-            <span><strong>মোবাইল:</strong> <a href="tel:+8801XXXXXXXXX" className="text-indigo-700 underline hover:text-indigo-900">01XXXXXXXXX</a></span>
+            <span><strong>মোবাইল:</strong> <a href="tel:+8801305573617" className="text-indigo-700 underline hover:text-indigo-900">01305573617</a></span>
           </p>
           <p className="text-indigo-900 text-lg flex items-center gap-3">
             <span className="text-indigo-600 text-2xl">📍</span>
-            <span><strong>ঠিকানা:</strong> বাংলাদেশ</span>
+            <span><strong>ঠিকানা:</strong> 121/বি আইজীবী দোয়েল ভবন, জজ কোর্ট সংলগ্ন, চট্টগ্রাম।</span>
           </p>
         </div>
 

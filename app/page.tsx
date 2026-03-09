@@ -4,6 +4,7 @@ import Division from './component/Division';
 import Headers from './component/Header';
 import CoordinatorMessage from './component/CoordinatorMessage';
 import ServiceAds from './component/ServiceAds';
+import Loading from './component/loading';
 const page = () => {
   return (
     <div>
@@ -11,8 +12,12 @@ const page = () => {
       
      <Headers></Headers>
      <Division></Division>
-    <ServiceAds></ServiceAds>
+    
      <CoordinatorMessage></CoordinatorMessage>
+     </Suspense>
+     <Suspense fallback={<Loading></Loading>}>
+     <ServiceAds></ServiceAds>
+     
      </Suspense>
     
 

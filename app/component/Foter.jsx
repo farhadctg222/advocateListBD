@@ -14,9 +14,9 @@ const Foter = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-4 md:mb-0">
                         <h2 className="text-lg font-semibold">Contact Us</h2>
-                        <p>Address: 121/b Ainjibi Samit Douel Bhavon,Court, Chattogram </p>
+                        <p>Address: 121/b Ainjibi Samity Dowel Bhaban, Judge Court, Chattogram </p>
                         <p>Phone: 01305573617</p>
-                        <p>Email: advocatehelp@gmail.com</p>
+                        <p>Email: farhadctg222@gmail.com</p>
                     </div>
                     <div>
                         
@@ -44,7 +44,7 @@ const Foter = () => {
             </div>
             <div className="text-center mt-4">
                 <footer className="bg-gray-900 text-white p-4 text-center">
-      <p>© 2025 AdvocateLinker.com | সকল অধিকার সংরক্ষিত</p>
+      <p>© 2026-27 AdvocateLinker.com | সকল অধিকার সংরক্ষিত</p>
     </footer> </div>
         </footer>
             
